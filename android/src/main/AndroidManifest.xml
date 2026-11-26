@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <uses-sdk tools:overrideLibrary="com.michaeltchuang.seedvault.sdk" />
+    <uses-permission android:name="com.michaeltchuang.seedvault.service.ACCESS_SEED_VAULT" />
+    <queries>
+        <package android:name="com.michaeltchuang.seedvault.service" />
+    </queries>
+</manifest>

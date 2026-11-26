@@ -131,6 +131,10 @@ dist
 # pnpm
 .pnpm-store
 
+# Android Gradle outputs
+android/.gradle/
+android/build/
+
 # yarn v3
 .pnp.*
 .yarn/*

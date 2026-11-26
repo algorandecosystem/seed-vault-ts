@@ -1,0 +1,39 @@
+plugins {
+  id 'com.android.library'
+  id 'com.facebook.react'
+  id 'org.jetbrains.kotlin.android'
+}
+
+def safeExtGet(String prop, Object fallback) {
+  rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
+react {
+  libraryName = 'SeedVaultServiceSpec'
+  codegenJavaPackageName = 'com.algorandecosystem.seedvault'
+}
+
+android {
+  namespace 'com.algorandecosystem.seedvault'
+  compileSdkVersion safeExtGet('compileSdkVersion', 37)
+
+  defaultConfig {
+    minSdkVersion safeExtGet('minSdkVersion', 29)
+  }
+
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_17
+    targetCompatibility JavaVersion.VERSION_17
+  }
+
+  kotlinOptions {
+    jvmTarget = '17'
+    freeCompilerArgs += ['-Xskip-metadata-version-check']
+  }
+}
+
+dependencies {
+  implementation 'com.facebook.react:react-android'
+  implementation 'com.michaeltchuang.algokit.seedvault:seed-vault-sdk:0.0.4'
+  implementation 'com.solanamobile:seedvault-wallet-sdk:0.4.0'
+}

@@ -1,0 +1,72 @@
+{
+  "name": "@algorandecosystem/seed-vault",
+  "version": "0.1.0",
+  "description": "React Native Seed Vault keystore for Wallet Provider",
+  "license": "MIT",
+  "author": "Algorand Ecosystem",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/algorandecosystem/seed-vault-ts.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "android",
+    "react-native.config.js"
+  ],
+  "codegenConfig": {
+    "name": "SeedVaultServiceSpec",
+    "type": "modules",
+    "jsSrcsDir": "src/service",
+    "android": {
+      "javaPackageName": "com.algorandecosystem.seedvault"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "lint": "oxlint src",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "pack": "npm pack"
+  },
+  "peerDependencies": {
+    "@algorandfoundation/keystore-core": ">=1.0.0-canary.5 <2.0.0",
+    "@algorandfoundation/wallet-provider": ">=1.0.0-canary.6 <2.0.0",
+    "@tanstack/store": "^0.11.2",
+    "before-after-hook": "^4.0.0",
+    "falcon-1024": "^0.2.0",
+    "react-native": ">=0.81.0"
+  },
+  "peerDependenciesMeta": {
+    "falcon-1024": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@algorandfoundation/keystore-core": "1.0.0-canary.5",
+    "@algorandfoundation/wallet-provider": "1.0.0-canary.6",
+    "@types/node": "^20.19.39",
+    "@tanstack/store": "0.11.2",
+    "before-after-hook": "^4.0.0",
+    "falcon-1024": "0.2.0",
+    "oxlint": "^1.57.0",
+    "react-native": "0.81.5",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
