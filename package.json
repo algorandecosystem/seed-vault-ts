@@ -16,6 +16,10 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
+    },
+    "./accounts": {
+      "types": "./dist/accounts.d.ts",
+      "import": "./dist/accounts.js"
     }
   },
   "files": [
@@ -44,7 +48,9 @@
     "pack": "npm pack"
   },
   "peerDependencies": {
+    "@algorandfoundation/accounts-store": ">=1.0.0-canary.3 <2.0.0",
     "@algorandfoundation/keystore-core": ">=1.0.0-canary.5 <2.0.0",
+    "@algorandfoundation/log-store": ">=1.0.0-canary.3 <2.0.0",
     "@algorandfoundation/wallet-provider": ">=1.0.0-canary.6 <2.0.0",
     "@tanstack/store": "^0.11.2",
     "before-after-hook": "^4.0.0",
@@ -52,13 +58,23 @@
     "react-native": ">=0.81.0"
   },
   "peerDependenciesMeta": {
+    "@algorandfoundation/accounts-store": {
+      "optional": true
+    },
+    "@algorandfoundation/log-store": {
+      "optional": true
+    },
     "falcon-1024": {
       "optional": true
     }
   },
   "devDependencies": {
+    "@algorandfoundation/accounts-keystore-extension": "1.0.0-canary.12",
+    "@algorandfoundation/accounts-store": "1.0.0-canary.3",
     "@algorandfoundation/keystore-core": "1.0.0-canary.5",
+    "@algorandfoundation/log-store": "1.0.0-canary.4",
     "@algorandfoundation/wallet-provider": "1.0.0-canary.6",
+    "@scure/base": "^1.2.6",
     "@types/node": "^20.19.39",
     "@tanstack/store": "0.11.2",
     "before-after-hook": "^4.0.0",

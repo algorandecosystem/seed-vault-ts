@@ -51,6 +51,30 @@ await provider.key.store.ready;
 
 `existingOptions.keystore.store` and `existingOptions.keystore.hooks` remain the host's existing objects. The adapter exposes authorized keys as stable IDs of the form `<seedId>/<accountIndex>` and keeps the address-based Seed Vault API inside the binding. `binding.address(id)` is available to an accounts-layer integration that needs the corresponding service address.
 
+## Accounts integration
+
+The optional accounts bridge is available from the `@algorandecosystem/seed-vault/accounts` subpath. Install `@algorandfoundation/accounts-store` in applications that use it, then add `WithAccountsSeedVault` after the keystore and account-store extensions. Resolve each account address using the service binding:
+
+```typescript
+import { WithAccountsSeedVault } from "@algorandecosystem/seed-vault/accounts";
+
+const WalletProvider = Provider.withExtensions([
+  WithSeedVaultKeyStore,
+  WithAccountStore,
+  WithAccountsSeedVault,
+]);
+const provider = new WalletProvider(config, {
+  ...existingOptions,
+  keystore: { ...existingOptions.keystore, binding },
+  accounts: {
+    ...existingOptions.accounts,
+    seedVault: { address: (key) => binding.address(key.id) },
+  },
+});
+```
+
+Vault keys without a resolved address are not added as accounts. Each added account signs transactions through the Seed Vault keystore with `intent: "transaction"`.
+
 To request the Seed Vault's transaction confirmation UI, pass the intent through the keystore context:
 
 ```typescript

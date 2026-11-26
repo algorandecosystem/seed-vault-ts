@@ -8,12 +8,24 @@ importers:
 
   .:
     devDependencies:
+      '@algorandfoundation/accounts-keystore-extension':
+        specifier: 1.0.0-canary.12
+        version: 1.0.0-canary.12(@algorandfoundation/log-store@1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0))(@tanstack/store@0.11.2)(before-after-hook@4.0.0)(falcon-1024@0.2.0)
+      '@algorandfoundation/accounts-store':
+        specifier: 1.0.0-canary.3
+        version: 1.0.0-canary.3(@algorandfoundation/log-store@1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0))(@tanstack/store@0.11.2)(before-after-hook@4.0.0)
       '@algorandfoundation/keystore-core':
         specifier: 1.0.0-canary.5
         version: 1.0.0-canary.5(@algorandfoundation/wallet-provider@1.0.0-canary.6)(@tanstack/store@0.11.2)(before-after-hook@4.0.0)(falcon-1024@0.2.0)
+      '@algorandfoundation/log-store':
+        specifier: 1.0.0-canary.4
+        version: 1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0)
       '@algorandfoundation/wallet-provider':
         specifier: 1.0.0-canary.6
         version: 1.0.0-canary.6
+      '@scure/base':
+        specifier: ^1.2.6
+        version: 1.2.6
       '@tanstack/store':
         specifier: 0.11.2
         version: 0.11.2
@@ -41,6 +53,36 @@ importers:
 
 packages:
 
+  '@algorandfoundation/accounts-keystore-extension@1.0.0-canary.12':
+    resolution: {integrity: sha512-t72L9Ivg9tf8AAf8kMvDuTkdkqFNH5KdubYLqghnX91zSUnftoUofrUrR7av3AjGZZ52iI2KyHJ1/J1YM53DuA==}
+    peerDependencies:
+      '@algorandfoundation/log-store': 1.0.0-canary.3
+      '@tanstack/store': 0.9.3
+      before-after-hook: 4.0.0
+    peerDependenciesMeta:
+      '@algorandfoundation/log-store':
+        optional: true
+
+  '@algorandfoundation/accounts-store@1.0.0-canary.2':
+    resolution: {integrity: sha512-IwohwXvBGL9zqCUs8uJ9J4oqFfC1BXKs01yW3EqYcUT+8YHhFIusKOo62pWmsbdgW9GwaZOtXdKdH2ZG51QByg==}
+    peerDependencies:
+      '@algorandfoundation/log-store': 1.0.0-canary.3
+      '@tanstack/store': 0.9.3
+      before-after-hook: 4.0.0
+    peerDependenciesMeta:
+      '@algorandfoundation/log-store':
+        optional: true
+
+  '@algorandfoundation/accounts-store@1.0.0-canary.3':
+    resolution: {integrity: sha512-+rsAbv97ZUZ5T+EU1DljMCXkTun5A6oqyeStEGDM+/X/XooUWR2EHlt6wJ5WS4PMGrNH/VByi/LwouFsZuMeIA==}
+    peerDependencies:
+      '@algorandfoundation/log-store': 1.0.0-canary.4
+      '@tanstack/store': 0.9.3
+      before-after-hook: 4.0.0
+    peerDependenciesMeta:
+      '@algorandfoundation/log-store':
+        optional: true
+
   '@algorandfoundation/keystore-core@1.0.0-canary.5':
     resolution: {integrity: sha512-J6YPis8l51TLpYKOBHc2j0M50kEiV1OqPW4TvvmsHd1OylxKGbIpOusU7GUoQTjP7Gq19zbhWlWE2RQ3DQrybw==}
     peerDependencies:
@@ -57,6 +99,15 @@ packages:
         optional: true
       falcon-1024:
         optional: true
+
+  '@algorandfoundation/log-store@1.0.0-canary.4':
+    resolution: {integrity: sha512-RjFdADYhtoECvtJ6syJwuxsL8I+rnOBfB23KG1rbkglyXacO/okyyopvoQO96hAq5ABHJMXN7vtJmMd8fPhMmA==}
+    peerDependencies:
+      '@tanstack/store': 0.9.3
+      before-after-hook: 4.0.0
+
+  '@algorandfoundation/wallet-provider@1.0.0-canary.5':
+    resolution: {integrity: sha512-yXak4ze3uOdkSSyCkv4Qz4mm4FiqCKh3pDErZNBaIhkGCgWcboelgkEMQneBd0I/o9DwU2EfkHfRSZYxaJ11Rg==}
 
   '@algorandfoundation/wallet-provider@1.0.0-canary.6':
     resolution: {integrity: sha512-4rAE0nkhEf0HuWS3RFfKs2EPISymXNHwXyr9vLkQaMJc+Kf1R078LABgUf8r9pu9ogkxzZDZOvkEJI6VSYuuAg==}
@@ -753,6 +804,9 @@ packages:
 
   '@scure/base@1.2.6':
     resolution: {integrity: sha512-g/nm5FgUa//MCj1gV09zTJTaM6KBAHqLN907YVQqf7zC49+DcO4B1so4ZX07Ef10Twr6nuqYEH9GEggFXA4Fmg==}
+
+  '@scure/base@2.0.0':
+    resolution: {integrity: sha512-3E1kpuZginKkek01ovG8krQ0Z44E3DHPjc5S2rjJw9lZn3KSQOs8S7wqikF/AH7iRanHypj85uGyxk0XAyC37w==}
 
   '@scure/bip39@1.6.0':
     resolution: {integrity: sha512-+lF0BbLiJNwVlev4eKelw1WWLaiKXw7sSl8T6FvBlWkdX+94aGJ4o8XjUdlyhTCjd8c+B3KT3JfS8P0bLRNU6A==}
@@ -1919,6 +1973,51 @@ packages:
 
 snapshots:
 
+  '@algorandfoundation/accounts-keystore-extension@1.0.0-canary.12(@algorandfoundation/log-store@1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0))(@tanstack/store@0.11.2)(before-after-hook@4.0.0)(falcon-1024@0.2.0)':
+    dependencies:
+      '@algorandfoundation/accounts-store': 1.0.0-canary.2(@algorandfoundation/log-store@1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0))(@tanstack/store@0.11.2)(before-after-hook@4.0.0)
+      '@algorandfoundation/keystore-core': 1.0.0-canary.5(@algorandfoundation/wallet-provider@1.0.0-canary.5)(@tanstack/store@0.11.2)(before-after-hook@4.0.0)(falcon-1024@0.2.0)
+      '@algorandfoundation/wallet-provider': 1.0.0-canary.5
+      '@scure/base': 2.0.0
+      '@tanstack/store': 0.11.2
+      before-after-hook: 4.0.0
+    optionalDependencies:
+      '@algorandfoundation/log-store': 1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0)
+    transitivePeerDependencies:
+      - '@algorandfoundation/dp256'
+      - '@algorandfoundation/xhd-wallet-api'
+      - falcon-1024
+
+  '@algorandfoundation/accounts-store@1.0.0-canary.2(@algorandfoundation/log-store@1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0))(@tanstack/store@0.11.2)(before-after-hook@4.0.0)':
+    dependencies:
+      '@algorandfoundation/wallet-provider': 1.0.0-canary.5
+      '@noble/hashes': 2.0.1
+      '@scure/base': 2.0.0
+      '@tanstack/store': 0.11.2
+      before-after-hook: 4.0.0
+    optionalDependencies:
+      '@algorandfoundation/log-store': 1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0)
+
+  '@algorandfoundation/accounts-store@1.0.0-canary.3(@algorandfoundation/log-store@1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0))(@tanstack/store@0.11.2)(before-after-hook@4.0.0)':
+    dependencies:
+      '@algorandfoundation/wallet-provider': 1.0.0-canary.5
+      '@noble/hashes': 2.0.1
+      '@scure/base': 2.0.0
+      '@tanstack/store': 0.11.2
+      before-after-hook: 4.0.0
+    optionalDependencies:
+      '@algorandfoundation/log-store': 1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0)
+
+  '@algorandfoundation/keystore-core@1.0.0-canary.5(@algorandfoundation/wallet-provider@1.0.0-canary.5)(@tanstack/store@0.11.2)(before-after-hook@4.0.0)(falcon-1024@0.2.0)':
+    dependencies:
+      '@algorandfoundation/wallet-provider': 1.0.0-canary.5
+      '@noble/hashes': 2.0.1
+      '@scure/bip39': 1.6.0
+      '@tanstack/store': 0.11.2
+      before-after-hook: 4.0.0
+    optionalDependencies:
+      falcon-1024: 0.2.0
+
   '@algorandfoundation/keystore-core@1.0.0-canary.5(@algorandfoundation/wallet-provider@1.0.0-canary.6)(@tanstack/store@0.11.2)(before-after-hook@4.0.0)(falcon-1024@0.2.0)':
     dependencies:
       '@algorandfoundation/wallet-provider': 1.0.0-canary.6
@@ -1928,6 +2027,14 @@ snapshots:
       before-after-hook: 4.0.0
     optionalDependencies:
       falcon-1024: 0.2.0
+
+  '@algorandfoundation/log-store@1.0.0-canary.4(@tanstack/store@0.11.2)(before-after-hook@4.0.0)':
+    dependencies:
+      '@algorandfoundation/wallet-provider': 1.0.0-canary.5
+      '@tanstack/store': 0.11.2
+      before-after-hook: 4.0.0
+
+  '@algorandfoundation/wallet-provider@1.0.0-canary.5': {}
 
   '@algorandfoundation/wallet-provider@1.0.0-canary.6': {}
 
@@ -2476,6 +2583,8 @@ snapshots:
     optional: true
 
   '@scure/base@1.2.6': {}
+
+  '@scure/base@2.0.0': {}
 
   '@scure/bip39@1.6.0':
     dependencies:
